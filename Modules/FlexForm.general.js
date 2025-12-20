@@ -1154,7 +1154,9 @@ function ffOnSelect2OpenedFocus() {
 	$(document).on('select2:open', () => {
 		document.querySelector('.select2-container--open .select2-search__field').focus();
 	});
-	$.fn.modal.Constructor.prototype._enforceFocus = function() {};
+	if ( $.fn.modal && $.fn.modal.Constructor.prototype._enforceFocus ) {
+		$.fn.modal.Constructor.prototype._enforceFocus = function() {};
+	}
 }
 
 function attachTokens() {
