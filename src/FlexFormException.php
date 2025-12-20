@@ -12,18 +12,18 @@ namespace FlexForm;
 
 use Exception;
 
-class FlexFormException extends \Exception {
+class FlexFormException extends Exception {
 
 	/**
 	 * @param $msg
 	 * @param $val
 	 * @param Exception|null $old
 	 */
-	public function __construct( $msg, $val = 0, Exception $old = null ) {
+	public function __construct( $msg, $val = 0, ?Exception $old = null ) {
 		parent::__construct( $msg, $val, $old );
 	}
 
-	public function __toString() {
+	public function __tostring() {
 		return __CLASS__ . ": [{$this->code}]: {$this->message}\n";
 	}
 
