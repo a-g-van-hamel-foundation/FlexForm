@@ -157,9 +157,9 @@ class Validate {
 	/**
 	 * @param array $args
 	 *
-	 * @return string
+	 * @return string|string[]
 	 */
-	public static function validHTML( array $args ): string {
+	public static function validHTML( array $args ): string|array {
 		if ( isset( $args['html'] ) ) {
 			$tmp = explode( '=', $args['html'] );
 			$html = $tmp[0];
